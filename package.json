@@ -1,0 +1,21 @@
+{
+  "name": "mongo-aws-xray",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "aws-xray-sdk": "^1.0.5-beta",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "author": "Trey Tacon <trey@mixmax.com> (https://mixmax.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/mixmaxhq/mongo-aws-xray",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixmaxhq/mongo-aws-xray.git"
+  }
+}
