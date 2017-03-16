@@ -41,6 +41,10 @@ function patchQueries(coll) {
       }
 
       var subsegment = parent.addNewSubsegment(coll._name);
+      subsegment.addMetadata('collection', coll._name);
+      subsegment.addMetadata('query', fn);
+      subsegment.addRemote();
+      // TODO(ttacon): Add query fingerprint.
 
       let hasCb = false;
       var args = Array.from(arguments);
@@ -48,8 +52,8 @@ function patchQueries(coll) {
         hasCb = true;
         const cb = args[args.length-1];
         args[args.length-1] = function(err, data) {
-          cb(err, data);
           subsegment.close(err);
+          cb(err, data);
         };
       }
 
@@ -61,10 +65,6 @@ function patchQueries(coll) {
           oldNext.apply(coll[baseName], fn);
         };
       }
-
-      subsegment.addMetadata('collection', coll._name);
-      subsegment.addMetadata('query', fn);
-      // TODO(ttacon): Add query fingerprint.
 
       return query;
     };
