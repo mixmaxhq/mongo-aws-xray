@@ -1,6 +1,6 @@
 {
   "name": "mongo-aws-xray",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "dependencies": {
     "aws-xray-sdk": "^1.0.5-beta",
